@@ -2,12 +2,17 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import CartWidget from '../CartWidget/CartWidget'
 
 
 function NavBar() {
     return (
-        <Navbar className="bg-light">
-            <Container>
+        <>
+            <Navbar className="bg-light">
+                
+                <CartWidget />
+
+                <Container>
                 <Navbar.Brand href="#home">Movida Roller</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -29,7 +34,9 @@ function NavBar() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar >
+            </Navbar>
+            
+            </>
     )
 }
 
