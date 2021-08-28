@@ -9,8 +9,6 @@ function NavBar() {
     return (
         <>
             <Navbar className="bg-light">
-                
-                <CartWidget />
 
                 <Container>
                 <Navbar.Brand href="#home">Movida Roller</Navbar.Brand>
@@ -33,7 +31,9 @@ function NavBar() {
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+                </Container>
+                
+                <CartWidget />
             </Navbar>
             
             </>

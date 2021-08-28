@@ -1,6 +1,6 @@
-function ItemListContainer() {
+function ItemListContainer({greeting = "Estamos trabajando para ofrecerte las mejores ofertas en patines :)"}) {
     return (
-        <p style={{ textAlign: 'center', color: 'gray' }} > Estamos trabajando para ofrecerte las mejores ofertas en patines :)</p>
+        <p style={{ textAlign: 'center', color: 'gray' }} > {greeting} </p>
     )
 }
 

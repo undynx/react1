@@ -1,10 +1,10 @@
-import logo from '../../assets/logo.png'
+import carrito from '../../assets/carrito.png'
 import './CartWidget.css';
 
 function CartWidget() {
     return (
         <>
-            <img src={logo} alt="logo rollers"/>
+            <img src={carrito} alt="logo rollers"/>
             
         </>
     )
