@@ -1,36 +1,43 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import patin from '../../assets/twister-edge-e3.jpg'
 import './ItemCount.css';
 
-function ItemCount() {
+function ItemCount({ initial, quantity, onAdd }) {
     
-    let [stock, setStock] = useState(1);
+    let [count, setCount] = useState(initial)
+
     function agregarItem() {
-        if (stock <= 10) {
-            setStock(stock+1)
+        if (count < quantity) {
+            setCount(count+1)
         }
     }
 
     function quitarItem() {
-        if (stock > 0) {
-            setStock(stock-1)
+        if (count > initial) {
+            setCount(count-1)
         }
+    }
+
+    function handlerOnAdd() {
+        onAdd()
+        setCount(0)
     }
 
     
     return (
+
         <div id="cardContainer">
             <div className="card">
                 <img src={patin} alt="patines rollerblade" />
                 <p>Patines Rollerblade Twister Edge e3</p>
 
                <div>
-                    <button className="botonCarrito" onClick={quitarItem}>-</button>
-                    <p id="contador" className="botonCarrito">{stock}</p>
-                    <button className="botonCarrito" onClick={agregarItem}>+</button>
+                    <button className="botonCarrito" onClick={quitarItem}> - </button>
+                    <p id="contador" className="botonCarrito"> {count} </p>
+                    <button className="botonCarrito" onClick={agregarItem}> + </button>
                 </div>
 
-                <button id="agregarCart">Agregar</button>
+                <button id="agregarCart" onClick={handlerOnAdd}>Agregar</button>
             </div>
         </div>
     )
