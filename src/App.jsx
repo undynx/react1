@@ -25,8 +25,6 @@ function App() {
       <ItemListContainer greeting = {"Estamos trabajando para ofrecerte las mejores ofertas en patines :)"}/>
       
       <ItemCount initial={1} quantity={10} onAdd={onAdd} />
-
-      <Item />
       
     </>
   );
