@@ -1,0 +1,11 @@
+#detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+#detail-card {
+    height: 280px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}

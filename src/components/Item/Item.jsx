@@ -6,7 +6,6 @@ function Item({items}) {
             
             <img src={items.foto} />
             <p>{items.name}</p>
-            <p>Ruedas de {items.ruedas}</p>
 
         </div>
     )
@@ -14,5 +13,3 @@ function Item({items}) {
 }
 
 export default Item;
-
-//<img src={item.foto} />
