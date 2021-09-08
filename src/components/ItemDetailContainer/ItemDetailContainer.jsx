@@ -17,7 +17,7 @@ function ItemDetailContainer({products}) {
 
     return (
         <div id="detail-container">
-            {products.map(elem => <ItemDetail key={elem.id} elem={elem} />)}
+            <ItemDetail key={elem.id} elem={elem} />
         </div>
     )
 

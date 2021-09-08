@@ -1,13 +1,17 @@
-function Item({items}) {
+import { Link } from 'react-router-dom';
+import './Item.css'
+
+function Item({ items }) {
     
     return(
     
-        <div className="card">
-            
+        <span className="card"> 
             <img src={items.foto} />
             <p>{items.name}</p>
-
-        </div>
+            <Link to='/detalle'>
+                <button>Detalle</button>
+            </Link>
+        </span>
     )
 
 }
