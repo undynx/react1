@@ -24,14 +24,14 @@ let articulos = [
 
 ]
 
-let tarea = new Promise((resolve, reject) => {
+export const tarea = new Promise((resolve, reject) => {
 
-    setTimeout(() => {
+  setTimeout(() => {
     resolve(articulos)
     reject('error')
-    }, 3000);
+  }, 3000);
 
-  })
+});
 
 
 function ItemListContainer({ greeting }) {
@@ -48,7 +48,7 @@ function ItemListContainer({ greeting }) {
     }else{
       tarea
       .then((resolve)=> setItems(resolve.filter( r => category===r.categoria)) ) 
-        }
+    }
   }, [category])
 
   return (

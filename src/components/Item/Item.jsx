@@ -1,7 +1,32 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Item.css'
 
-function Item({ items }) {
+function Item({ items, initial, quantity, onAdd }) {
+
+    let [count, setCount] = useState(initial)
+
+    function onAdd() {
+        alert(`Agregado al carrito`)
+    }
+
+    function handlerOnAdd() {
+        onAdd()
+        setCount(0)
+    }
+
+    function agregarItem() {
+        if (count < quantity) {
+            setCount(count+1)
+        }
+    }
+
+    function quitarItem() {
+        if (count > initial) {
+            setCount(count - 1)
+        }
+    }
+
     
     return(
     
@@ -11,6 +36,14 @@ function Item({ items }) {
             <Link to='/detalle'>
                 <button>Detalle</button>
             </Link>
+
+            <div>
+                <button className="botonCarrito" onClick={quitarItem}> - </button>
+                <p id="contador" className="botonCarrito"> {count} </p>
+                <button className="botonCarrito" onClick={agregarItem}> + </button>
+            </div>
+
+            <button id="agregarCart" onClick={handlerOnAdd}>Agregar</button>
         </span>
     )
 

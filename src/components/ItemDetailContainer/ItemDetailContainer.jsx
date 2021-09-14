@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
+import { tarea } from '../ItemListContainer/ItemListContainer.jsx';
 
-function ItemDetailContainer({products}) {
+function ItemDetailContainer() {
 
     const [elem, setElem] = useState([])
 
-    let promesa = new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({products})
-        }, 2000)
-    })
-
     useEffect(() => {
-        promesa.then(resolve => setElem(resolve))
+        tarea
+        .then(resolve => setElem(resolve))
+
     }, [])
 
     return (
