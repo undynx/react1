@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Item.css'
 
-function Item({ items, initial, quantity, onAdd }) {
+function Item({ items }) {
 
-    let [count, setCount] = useState(initial)
+    let [count, setCount] = useState(0)
 
+    const quantity = items.stock
+
+        
     function onAdd() {
         alert(`Agregado al carrito`)
     }
@@ -22,7 +25,7 @@ function Item({ items, initial, quantity, onAdd }) {
     }
 
     function quitarItem() {
-        if (count > initial) {
+        if (count > 0) {
             setCount(count - 1)
         }
     }
