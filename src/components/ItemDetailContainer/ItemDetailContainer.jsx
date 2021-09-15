@@ -6,11 +6,13 @@ function ItemDetailContainer() {
 
     const [elem, setElem] = useState([])
 
+    /*
     useEffect(() => {
         tarea
         .then(resolve => setElem(resolve.find(r => elem.id===r(elem.id))))
 
     }, [])
+    */
 
     return (
         <div id="detail-container">

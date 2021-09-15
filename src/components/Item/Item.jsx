@@ -1,35 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Item.css'
+import './Item.css';
+import ItemCount from '../ItemCount/ItemCount.jsx';
 
 function Item({ items }) {
-
-    let [count, setCount] = useState(0)
-
-    const quantity = items.stock
-
-        
-    function onAdd() {
-        alert(`Agregado al carrito`)
-    }
-
-    function handlerOnAdd() {
-        onAdd()
-        setCount(0)
-    }
-
-    function agregarItem() {
-        if (count < quantity) {
-            setCount(count+1)
-        }
-    }
-
-    function quitarItem() {
-        if (count > 0) {
-            setCount(count - 1)
-        }
-    }
-
     
     return(
     
@@ -40,13 +13,8 @@ function Item({ items }) {
                 <button>Detalle</button>
             </Link>
 
-            <div>
-                <button className="botonCarrito" onClick={quitarItem}> - </button>
-                <p id="contador" className="botonCarrito"> {count} </p>
-                <button className="botonCarrito" onClick={agregarItem}> + </button>
-            </div>
+            <ItemCount items={items}/>
 
-            <button id="agregarCart" onClick={handlerOnAdd}>Agregar</button>
         </span>
     )
 
