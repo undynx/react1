@@ -38,7 +38,7 @@ function App() {
             <ItemListContainer greeting={"Estamos trabajando para ofrecerte las mejores ofertas en patines :)"} />
           </Route>
 
-          <Route exact path='/detalle'>
+          <Route exact path='/detalle/:id'>
             <ItemDetailContainer />
           </Route>
 

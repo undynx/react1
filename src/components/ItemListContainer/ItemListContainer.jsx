@@ -1,4 +1,5 @@
 import ItemList from '../ItemList/ItemList'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import eagle from '../../assets/flying.jpg';
 import psvelocidad from '../../assets/ps-trinity-velocidad.jpg'
 import powerbladeelite from '../../assets/powerblade-elite.jpg'
 import agressive from '../../assets/flying-agressive.jpg';
+import Item from '../Item/Item';
 
 
 let articulos = [
@@ -56,6 +58,7 @@ function ItemListContainer({ greeting }) {
       
       <p style={{ textAlign: 'center', color: 'gray' }} > {greeting} </p>
       <ItemList products={items} />
+      <ItemDetailContainer products={items} />
 
     </>
 

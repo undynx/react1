@@ -8,7 +8,7 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         tarea
-        .then(resolve => setElem(resolve))
+        .then(resolve => setElem(resolve.find(r => elem.id===r(elem.id))))
 
     }, [])
 
